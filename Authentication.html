@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulls and Cows</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <video autoplay muted loop id="myVideo">
+            <source src="Background.mp4" type="video/mp4">
+        </video>
+        <div class="wrapper">
+            <div class="Container">
+                <div class="nav">
+                    <div class="logo">
+                        Bulls and Cows
+                    </div>
+                    <div class="menu">
+                        <ul class="navMenu">    
+                            <li><a href="#">Acasa</a></li>
+                            <li><a href="#">Clasament</a></li>
+                            <li><a href="#">Cum se joaca? </a></li>
+                            <li><a href="#">Reguli</a></li>
+                            <li><a href="Authentication.html#">Log in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Login Form -->
+        <div class="login-box" id="Login" style="display: none;">
+            <h2>Login</h2>
+            <form>
+                <div class="user-box">
+                    <input type="email" name="" required="" id="email_login">
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="" required="" id="password_login">
+                    <label>Password</label>
+                </div>
+                <a href="#" id="btn2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Login
+                </a>
+                <a href="#" id="switch-to-register" class="switch" >Don't have an account? Register</a>
+            </form>
+        </div>
+
+<!-- Register Form -->
+        <div class="login-box" id="Register">
+            <h2>Register</h2>
+            <form>
+                <div class="user-box">
+                    <input type="text" name="" required="" id="username_register">
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="email" name="" required="" id="email_register">
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="" required="" id="password_register">
+                    <label>Password</label>
+                </div>
+                <a href="#" id="btn1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Register
+                </a>
+                <a href="#" id="switch-to-login" class="switch" >Already have an account? Login</a>
+            </form>
+        </div>
+
+
+        <div class="BlackFilter"></div>
+        <script type="module" src="authentication.js"></script>
+    </body>
+</html>

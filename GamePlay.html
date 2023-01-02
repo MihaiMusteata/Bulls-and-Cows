@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulls and Cows</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="Container">
+                <div class="nav">
+                    <div class="logo">
+                        Bulls and Cows
+                    </div>
+                    <div class="menu">
+                        <ul class="navMenu">    
+                            <li><a href="home.html#">Acasa</a></li>
+                            <li><a href="#">Clasament</a></li>
+                            <li><a href="HowToPlay.html">Cum se joaca? </a></li>
+                            <li><a href="Rules.html">Reguli</a></li>
+                            <li><a href="#">Log in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Selectarea Modului de Joc -->
+        <div class="box" id="SelectMode">
+            <h1><br>Selectează modul de joc</h1>
+            <img src="RoboMode.png" alt="RoboMode" class="Mode" id="RoboMode" style="margin:50px 0 auto 100px; filter: grayscale(100%);">
+            <img src="FriendMode.png" alt="FriendMode" class="Mode" id="FriendMode" style="margin:auto auto 1px 200px; filter: grayscale(100%);">
+            <h2 style="margin:0 0 auto 40px;">Impotriva unui robot</h2>
+            <h2 style="margin:0 0 auto 50px;">Impotriva unui prieten</h2>
+            <button class="Start" id="StartJoc">Start Joc</button>
+        </div>
+        <!-- Setarea numarului -->
+        <div class="setNumber" id="setNumber" style="height: 400px;">
+            <h1><br>Setează numărul</h1>
+            <input type="tel" maxlength=1 id="a" onkeyup="moveOnMax(this,'b')" />
+            <input type="tel" maxlength=1 id="b" onkeyup="moveOnMax(this,'c')" />
+            <input type="tel" maxlength=1 id="c" onkeyup="moveOnMax(this,'d')" />
+            <input type="tel" maxlength=1 id="d" onkeyup="read('a','b','c','d')"/>  
+            <button class="Start" id="setNumberBtn" style="margin: 60px auto 0 auto;" onclick="setNumber()">Setează</button>
+        </div>
+        <!-- Robot Floating -->
+        <div class="floating" id="flt"> 
+            <img src="Hand.png" alt="Hand" class="hand h1">
+            <img src="Hand.png" alt="Hand" class="hand h2">
+            <img class ="img1" src="Robot.png" alt="Robot" id="img1">
+            <div class="eye eye1"></div>
+            <div class="eye eye2"></div>
+            <div class="shadow s1"></div>
+            <div class="shadow s2"></div>
+            <div class="shadow s3"></div>
+        </div>
+        <!-- Input box pentru incercari -->
+        <div class="setNumber" id="Try">
+            <h1 id="round">Rândul meu</h1>
+            <input type="tel" maxlength=1 id="i1" onkeyup="moveOnMax(this,'i2')" />
+            <input type="tel" maxlength=1 id="i2" onkeyup="moveOnMax(this,'i3')" />
+            <input type="tel" maxlength=1 id="i3" onkeyup="moveOnMax(this,'i4')" />
+            <input type="tel" maxlength=1 id="i4" onkeyup="read('i1','i2','i3','i4')"/>  
+            <button class="Start" id="TryBtn" style="margin: 60px auto 0 auto;" onclick="Try()">Încearcă</button>
+        </div>
+        <!-- Tabelul incercarilor -->
+        <div class="Table T1">
+            <h1>Numărul meu : * * * *</h1>
+            <table class="MyTable" id="Player">
+                <tr>
+                    <th>Încercările</th>
+                    <th>Bulls</th>
+                    <th><img src="Bull.png" alt="Bull" class="Bull" style="visibility: hidden;"></th>
+                    <th>Cows</th>
+                    <th><img src="Cow.png" alt="Cow" class="Cow" style="visibility: hidden;"></th>
+                </tr>
+            </table>
+        </div>
+        <div class="Table T2">
+            <h1>Numărul oponentului : * * * *</h1>
+            <table class="MyTable" id="Opponent">
+                <tr>
+                    <th>Încercările</th>
+                    <th>Bulls</th>
+                    <th><img src="Bull.png" alt="Bull" class="Bull" style="visibility: hidden;"></th>
+                    <th>Cows</th>
+                    <th><img src="Cow.png" alt="Cow" class="Cow" style="visibility: hidden;"></th>
+                </tr>
+            </table>
+        </div>
+        <!-- Scripts -->
+        <canvas id="world"></canvas>
+        <script src="/src/confetti.js"></script>
+        <script src="/src/play.js"></script>
+        <!-- Background -->
+        <video autoplay muted loop id="myVideo"><source src="Background.mp4" type="video/mp4"></video>
+        <div class="BlackFilter" id="filtru"></div>
+    </body>
+</html>

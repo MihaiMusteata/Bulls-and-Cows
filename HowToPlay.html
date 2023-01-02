@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bulls and Cows</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <video autoplay muted loop id="myVideo">
+            <source src="Background.mp4" type="video/mp4">
+        </video>
+        <div class="wrapper">
+            <div class="Container">
+                <div class="nav">
+                    <div class="logo">
+                        Bulls and Cows
+                    </div>
+                    <div class="menu">
+                        <ul class="navMenu">    
+                            <li><a href="home.html#">Acasa</a></li>
+                            <li><a href="#">Clasament</a></li>
+                            <li><a href="HowToPlay.html">Cum se joaca? </a></li>
+                            <li><a href="Rules.html">Reguli</a></li>
+                            <li><a href="Authentication.html#">Log in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="HowToPlay-title">Cum se joacă?</div>
+        <div class="slides">
+            <div>
+                <h2>Înainte de a începe jocul trebuie să îți stezi modul de joc. Vei avea posibilitatea să alegi fie să joci împotriva robotului, fie împotriva unui prieten. Procedurile și mersul jocului sunt aceleași în ambele cazuri, singura diferență îi că modul de joc împotriva robotului implică un algoritm complex ce poate câștiga acest joc în câteva mișcări. Ești gata să-l înfrunți?</h2>
+                <img src="RoboMode.png" alt="RoboMode" class="Mode" id="RoboMode" style="position: fixed;display:flex; top:230px; left:100px;">
+                <img src="FriendMode.png" alt="FriendMode" class="Mode" id="FriendMode" style="position: fixed;display:flex;  top:230px; right:100px;">
+            </div>
+
+
+            <div>
+                <h2 style="left:750px;">În continuare fiecare jucător își setează un număr secret, adică numărul pe care oponentul său va trebui să îl ghicească. Dacă joci împotriva robotului, acesta va alege un număr aleator, dar care respectă regulile de joc.</h2>
+                <img src="HowToPlay-SetNumber.png" alt="SetNumber" style="height:300px;width:300px; position:fixed;display:flex; top:140px; left:100px;">
+            </div>
+
+
+            <div>
+                <img src="HowToPlay-GamePlay.png" alt="SetNumber" style="height:200px;width:1000px; position:fixed;display:flex; top:140px; left:50%; transform: translateX(-50%);">
+                <h2 style="top:400px; width: 1100px;">La următoarea etapă, rând pe rând, jucătorii fac presupuneri și încearcă să ghicească numărul secret al oponentului său. După fiecare încercare jucătorul primește un feedback. Feedbackul constă în numărul de boi si de vaci pe care la obținut după acea încercare.</h2>
+            </div>
+
+            <div>
+                <h2>Ce reprezinta un Bou?
+                    Un Bou reprezinta o cifra din numar pe care ai ghicit-o si care este pe pozitia corectă.<br>
+                    Exemplu: Oponentul și-a setat numarul secret 5234, iar tu presupui 5789. În cazul acesta cifra 5 reprezintă un Bou<br>
+                    Ce reprezinta o Vaca? O vaca reprezinta o cifra din numar pe care ai ghicit-o, dar care este pe pozitia greșită.<br>
+                    Exemplu: Oponentul și-a setat numarul secret 5234, iar tu presupui 7895.În cazul acesta cifra 5 reprezintă o Vaca </h2>
+                <img src="Bull.png" alt="Bull" class="Bull" style="scale:4; position: fixed;display:flex; top:250px; left:150px;">
+                <img src="Cow.png" alt="Cow" class="Cow" style="scale:4; position: fixed;display:flex;  top:250px; right:150px;">   
+            </div>
+
+            <div>
+                <h2 style="width:1010px; top:200px;">Iar de-a lungul jocului vei fi însoțit de acest mini roboțel. Îți doresc mult succes și distracție plăcută. Sper să îți câștigi toți oponenții!</h2>
+                <div class="floating" id="flt" style="position: fixed; top:150px; display: block; scale:0.5;"> 
+                    <img src="Hand.png" alt="Hand" class="hand h1">
+                    <img src="Hand.png" alt="Hand" class="hand h2">
+                    <img class ="img1" src="Robot.png" alt="Robot" id="img1">
+                    <div class="eye eye1"></div>
+                    <div class="eye eye2"></div>
+                    <div class="shadow s1"></div>
+                    <div class="shadow s2"></div>
+                    <div class="shadow s3"></div>
+                </div>
+                <div class="btn" style="position: fixed; top:520px;">
+                    <ul class="btnJoaca">
+                        <li><a href="GamePlay.html#">Joaca</a></li> 
+                    </ul> 
+                </div>
+            </div>
+            <button id="prev-button">Previous</button>
+            <button id="next-button">Next</button>
+            
+        </div>
+        
+        <script src="HowToPlay.js"></script>
+
+        <div class="BlackFilter"></div>
+    </body>
+</html>
