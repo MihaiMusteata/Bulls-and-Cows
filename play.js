@@ -190,8 +190,6 @@ function insertTable(Player, Opponent, idTable){
 // Functia de joc
 function Try(){
     if(checkInput(input)){
-        // Check if game is over
-        GameOver();
         if(GameMode == "RoboMode"){
             Player1.guess = input;
             Robo.guess = Robo.possib[Math.floor(Math.random()*Robo.possib.length)];
@@ -204,19 +202,21 @@ function Try(){
                     i--;
                 }
             }
+        GameOver();
         }
         else if(GameMode == "FriendMode"){
             if(document.getElementById('Player').rows.length == document.getElementById('Opponent').rows.length){
                 Player1.guess = input;
                 insertTable(Player1, Player2, "Player");
                 if(!over)   
-                    typeWriter("Rândul oponentului!","round");
+                typeWriter("Rândul oponentului!","round");
             }
             else{
                 Player2.guess = input;
                 insertTable(Player2, Player1, "Opponent");  
                 if(!over)
-                    typeWriter("Rândul meu!","round");
+                typeWriter("Rândul meu!","round");
+                GameOver();
             }
         }
     }
@@ -242,7 +242,7 @@ function typeWriter(text, id) {
     }, 20);
 }
 
-var over;
+var over = false;
 /////////////////////////////// Zona NU ATINGE ///////////////////////////////
 function GameOver(){
     over = false;;
@@ -274,7 +274,6 @@ function GameOver(){
         document.getElementById('i4').style.display = 'none';
         document.getElementById('TryBtn').innerHTML = 'Acasa';
         document.getElementById('TryBtn').setAttribute('onclick', 'BackHome()');
-        typeWriter("Jocul s-a finalizat!","round");
     }
 }
 function BackHome(){
