@@ -1,1 +1,98 @@
-const _0x5c541e=_0x2667;(function(_0x2743af,_0x5ec285){const _0x16c0bd=_0x2667,_0x38a5e7=_0x2743af();while(!![]){try{const _0x3a7663=parseInt(_0x16c0bd(0x8c))/0x1*(parseInt(_0x16c0bd(0xa4))/0x2)+parseInt(_0x16c0bd(0x9e))/0x3+-parseInt(_0x16c0bd(0xaa))/0x4+-parseInt(_0x16c0bd(0x96))/0x5*(-parseInt(_0x16c0bd(0x9a))/0x6)+-parseInt(_0x16c0bd(0xab))/0x7+-parseInt(_0x16c0bd(0xac))/0x8+-parseInt(_0x16c0bd(0x99))/0x9*(-parseInt(_0x16c0bd(0xb1))/0xa);if(_0x3a7663===_0x5ec285)break;else _0x38a5e7['push'](_0x38a5e7['shift']());}catch(_0x1cda80){_0x38a5e7['push'](_0x38a5e7['shift']());}}}(_0x3784,0x6b987));import{initializeApp}from'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js';function _0x2667(_0x3f8cc4,_0x693b15){const _0x378453=_0x3784();return _0x2667=function(_0x26677b,_0x20dbea){_0x26677b=_0x26677b-0x8b;let _0x526426=_0x378453[_0x26677b];return _0x526426;},_0x2667(_0x3f8cc4,_0x693b15);}import{getFirestore,doc,setDoc,getDoc,getDocs,collection}from'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js';import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword}from'https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js';function _0x3784(){const _0x2e18fa=['querySelector','685104vaRkSb','3166107ZwQNZR','6628256pUixPn','location','exists','password_register','none','7465650KmWMkq','getElementById','password_login','1:241772917477:web:2ecb11f8816bc8912f5a0c','#btn1','241772917477','email_login','262897TfYdCQ','block','style','click','addEventListener','username','#btn2','AIzaSyDVU5vxH8NVaH7MTrHAC_lENGFbc1DH0o0','display','value','245BYkoRx','Register','home.html','9FnKpWZ','107724DRmVrq','user','project-bulls-and-cows.appspot.com','data','10836yyarDF','message','score','preventDefault','catch','password','2vjDPOo','No\x20such\x20document!','#switch-to-login','Users','G-N056QX9MEJ'];_0x3784=function(){return _0x2e18fa;};return _0x3784();}const firebaseConfig={'apiKey':_0x5c541e(0x93),'authDomain':'project-bulls-and-cows.firebaseapp.com','databaseURL':'https://project-bulls-and-cows-default-rtdb.europe-west1.firebasedatabase.app','projectId':'project-bulls-and-cows','storageBucket':_0x5c541e(0x9c),'messagingSenderId':_0x5c541e(0xb6),'appId':_0x5c541e(0xb4),'measurementId':_0x5c541e(0xa8)},app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);$(_0x5c541e(0xb5))[_0x5c541e(0x8f)](function(){const _0x26c27a=_0x5c541e;var _0x450f2d=document[_0x26c27a(0xb2)]('email_register')[_0x26c27a(0x95)],_0x27dae1=document[_0x26c27a(0xb2)](_0x26c27a(0xaf))[_0x26c27a(0x95)],_0x138b62=document[_0x26c27a(0xb2)]('username_register')[_0x26c27a(0x95)];setDoc(doc(db,'Users',_0x450f2d),{'username':_0x138b62,'password':_0x27dae1,'score':0x0}),createUserWithEmailAndPassword(auth,_0x450f2d,_0x27dae1)['then'](_0x5d625a=>{const _0x15717d=_0x26c27a,_0x13d393=_0x5d625a[_0x15717d(0x9b)];window[_0x15717d(0xad)]['href']=_0x15717d(0x98);})[_0x26c27a(0xa2)](_0x52af19=>{const _0x1b8e98=_0x26c27a;alert(_0x52af19[_0x1b8e98(0x9f)]);});}),$(_0x5c541e(0x92))[_0x5c541e(0x8f)](async function(){const _0x1eaec9=_0x5c541e;var _0x3b131e=document[_0x1eaec9(0xb2)](_0x1eaec9(0x8b))[_0x1eaec9(0x95)],_0x20ed60=document[_0x1eaec9(0xb2)](_0x1eaec9(0xb3))[_0x1eaec9(0x95)];class _0x14ec8f{constructor(_0x5d25ad,_0xbaf7e9){const _0x2e6a63=_0x1eaec9;this[_0x2e6a63(0x91)]=_0x5d25ad,this[_0x2e6a63(0xa0)]=_0xbaf7e9;}}const _0x3e4883={'toFirestore':_0x2da966=>{const _0xa18b4=_0x1eaec9;return{'username':_0x2da966['username'],'score':_0x2da966['score'],'password':_0x2da966[_0xa18b4(0xa3)]};},'fromFirestore':(_0x41abdd,_0x5130b3)=>{const _0x4310cb=_0x1eaec9,_0x4edf99=_0x41abdd[_0x4310cb(0x9d)](_0x5130b3);return new _0x14ec8f(_0x4edf99[_0x4310cb(0x91)],_0x4edf99[_0x4310cb(0xa0)],_0x4edf99['password']);}},_0x223298=doc(db,_0x1eaec9(0xa7),_0x3b131e)['withConverter'](_0x3e4883),_0x47f6d2=await getDoc(_0x223298);if(_0x47f6d2[_0x1eaec9(0xae)]()){const _0x2a41d7=_0x47f6d2[_0x1eaec9(0x9d)]();}else console['log'](_0x1eaec9(0xa5));const _0x258641=_0x47f6d2['data']();signInWithEmailAndPassword(auth,_0x3b131e,_0x20ed60)['then'](_0x1a25f2=>{const _0x4644d4=_0x1eaec9,_0x499313=_0x1a25f2[_0x4644d4(0x9b)];window[_0x4644d4(0xad)]['href']='home.html';})[_0x1eaec9(0xa2)](_0x228f44=>{alert(_0x228f44['message']);});});const loginForm=document[_0x5c541e(0xb2)]('Login'),registerForm=document[_0x5c541e(0xb2)](_0x5c541e(0x97)),switchToRegister=document[_0x5c541e(0xa9)]('#switch-to-register'),switchToLogin=document['querySelector'](_0x5c541e(0xa6));switchToRegister['addEventListener'](_0x5c541e(0x8f),_0x2514ac=>{const _0x3891e8=_0x5c541e;_0x2514ac[_0x3891e8(0xa1)](),loginForm['style']['display']=_0x3891e8(0xb0),registerForm[_0x3891e8(0x8e)][_0x3891e8(0x94)]=_0x3891e8(0x8d);}),switchToLogin[_0x5c541e(0x90)](_0x5c541e(0x8f),_0x4f0782=>{const _0x15de3b=_0x5c541e;_0x4f0782['preventDefault'](),loginForm[_0x15de3b(0x8e)]['display']=_0x15de3b(0x8d),registerForm[_0x15de3b(0x8e)][_0x15de3b(0x94)]=_0x15de3b(0xb0);});
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+import { getFirestore, doc, setDoc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyDVU5vxH8NVaH7MTrHAC_lENGFbc1DH0o0",
+    authDomain: "project-bulls-and-cows.firebaseapp.com",
+    databaseURL: "https://project-bulls-and-cows-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "project-bulls-and-cows",
+    storageBucket: "project-bulls-and-cows.appspot.com",
+    messagingSenderId: "241772917477",
+    appId: "1:241772917477:web:2ecb11f8816bc8912f5a0c",
+    measurementId: "G-N056QX9MEJ"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+$( "#btn1" ).click(function() {     
+        var email = document.getElementById('email_register').value;
+        var password = document.getElementById('password_register').value;
+        var username = document.getElementById('username_register').value;
+        //setDoc -> Firestore
+        setDoc(doc(db, "Users", email),{
+            username: username,
+            password: password,
+            score: 0});
+        // CreateUser -> Auth
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        const user = userCredential.user;
+        window.location.href = 'home.html';
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
+
+$( "#btn2" ).click(async function() {     
+    var email = document.getElementById('email_login').value;
+    var password = document.getElementById('password_login').value;
+    //Din Firestore extragem datele userului
+    class User {
+        constructor (username, score) {
+            this.username = username;
+            this.score = score;
+        }
+    }
+    
+    const userConverter = {
+        toFirestore: (user) => {
+            return {
+                username: user.username,
+                score: user.score,
+                password: user.password
+                };
+        },
+        fromFirestore: (snapshot, options) => {
+            const data = snapshot.data(options);
+            return new User(data.username, data.score, data.password);
+        }
+    };
+    const ref = doc(db, "Users", email).withConverter(userConverter);
+    const docSnap = await getDoc(ref);
+    if (docSnap.exists()) {
+        const user_data = docSnap.data();
+      } else {
+        console.log("No such document!");
+      }
+      
+    const user_data = docSnap.data();
+    
+    //singIn -> Auth
+    signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        const user = userCredential.user;
+        window.location.href = 'home.html';
+    })
+    .catch((error) => {
+        alert(error.message);
+    });
+
+});
+
+
+const loginForm = document.getElementById('Login');
+const registerForm = document.getElementById('Register');
+const switchToRegister = document.querySelector('#switch-to-register');
+const switchToLogin = document.querySelector('#switch-to-login');
+
+switchToRegister.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+});
+
+switchToLogin.addEventListener('click', (event) => {
+    event.preventDefault();
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+});
