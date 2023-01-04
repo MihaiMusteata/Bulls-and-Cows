@@ -50,6 +50,8 @@ document.getElementById("RoboMode").onclick = function(){
     document.getElementById("RoboMode").style.boxShadow = "0px 0px 10px white";
     document.getElementById("FriendMode").style.filter = "grayscale(100%)";
     document.getElementById("FriendMode").style.boxShadow = "none";
+    document.getElementById("StartJoc").style.display = "none";
+    document.getElementById("Next-to-Difficulty").style.display = "block";
 }
 document.getElementById("FriendMode").onclick = function(){
     GameMode = "FriendMode";
@@ -58,15 +60,14 @@ document.getElementById("FriendMode").onclick = function(){
     document.getElementById("FriendMode").style.boxShadow = "0px 0px 10px white";
     document.getElementById("RoboMode").style.filter = "grayscale(100%)";
     document.getElementById("RoboMode").style.boxShadow = "none";
+    document.getElementById("StartJoc").style.display = "block";
+    document.getElementById("Next-to-Difficulty").style.display = "none";
 }
-
+var Difficulty;
 // Pornirea jocului
-document.getElementById("StartJoc").onclick = function(){
-    if(GameMode == undefined){  
-        alert("Selectati un mod de joc!");
-        return;
-    }
+function StartJoc(){
     alert("Jucatorul 1 trebuie sa isi seteze un numar!");
+    document.getElementById("SelectLevel").style.display = "none";
     document.getElementById("SelectMode").style.display = "none";
     document.getElementById("setNumber").style.display = "block";
     if(GameMode == "RoboMode"){
@@ -75,6 +76,28 @@ document.getElementById("StartJoc").onclick = function(){
     else if(GameMode == "FriendMode"){
         Player2 = new Player(0,0,0,0);
     }
+}
+document.getElementById("Next-to-Difficulty").onclick = function(){
+    document.getElementById("SelectMode").style.display = "none";
+    document.getElementById("SelectLevel").style.display = "block";
+}
+document.getElementById("Easy").onclick = function(){
+    Difficulty = "Easy";
+    document.getElementById("Easy").style.background="linear-gradient(to right, rgba(255,0,0,0) 0%, rgba(255,0,0,1) 50%, rgba(0,0,255,0) 100%)";
+    document.getElementById("Medium").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+    document.getElementById("Hard").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+}
+document.getElementById("Medium").onclick = function(){
+    Difficulty = "Medium";
+    document.getElementById("Easy").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+    document.getElementById("Medium").style.background="linear-gradient(to right, rgba(255,0,0,0) 0%, rgba(255,0,0,1) 50%, rgba(0,0,255,0) 100%)";
+    document.getElementById("Hard").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+}
+document.getElementById("Hard").onclick = function(){
+    Difficulty = "Hard";
+    document.getElementById("Easy").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+    document.getElementById("Medium").style.background="linear-gradient(to right, #03e9f400 0%, #03e9f4 50%, #03e9f400 100%)";
+    document.getElementById("Hard").style.background="linear-gradient(to right, rgba(255,0,0,0) 0%, rgba(255,0,0,1) 50%, rgba(0,0,255,0) 100%)";
 }
 // Generarea tuturor posibilitatilor ce respecta regulile de joc
 function init(){
@@ -141,6 +164,7 @@ function setNumber(){
         if(GameMode == "RoboMode"){
             Player1.ans = input;
             Robo.ans = Robo.possib[Math.floor(Math.random()*Robo.possib.length)];
+            console.log(Robo.ans);
             openTable();
         }
         else if(GameMode == "FriendMode"){
@@ -196,7 +220,13 @@ function Try(){
             insertTable(Player1, Robo, "Player");
             insertTable(Robo, Player1, "Opponent");
             // Robo check
-            for(let i = 0; i < Robo.possib.length; i++){
+            let dif = 1;
+            if(Difficulty == "Easy")
+                dif = 0.1;
+            else if(Difficulty == "Medium")
+                dif = 0.3;
+            console.log(Robo.possib.length)
+            for(let i = 0; i < dif*Robo.possib.length; i++){
                 if(!Robo.check(Robo.possib[i],Robo.guess)){
                     Robo.possib.splice(i,1);
                     i--;

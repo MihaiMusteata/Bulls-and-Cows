@@ -17,7 +17,7 @@
                     <div class="menu">
                         <ul class="navMenu">    
                             <li><a href="home.html#">Acasa</a></li>
-                            <li><a href="#">Clasament</a></li>
+                            <li><a href="Leaderboard.html">Clasament</a></li>
                             <li><a href="HowToPlay.html">Cum se joaca? </a></li>
                             <li><a href="Rules.html">Reguli</a></li>
                             <li><a href="#">Contul tău</a></li>
@@ -33,7 +33,20 @@
             <img src="FriendMode.png" alt="FriendMode" class="Mode" id="FriendMode" style="margin:auto auto 1px 200px; filter: grayscale(100%);">
             <h2 style="margin:0 0 auto 40px;">Impotriva unui robot</h2>
             <h2 style="margin:0 0 auto 50px;">Impotriva unui prieten</h2>
-            <button class="Start" id="StartJoc">Start Joc</button>
+            <button class="Start" id="StartJoc" style="display: none;" onclick="StartJoc()">Start Joc</button>
+            <button class="Start" id="Next-to-Difficulty" style="display: none;">Selectează Dificultatea</button>
+        </div>
+        <!-- Selectarea nivelului de dificultate -->
+        <div class="box" id="SelectLevel" style="display: none;">
+            <h1><br>Selectează nivelul de dificultate</h1>
+            <div class="difficulty-container">
+                <ul>    
+                    <li><a href="#" id="Easy">Ușor</a></li>
+                    <li><a href="#" id="Medium">Mediu</a></li>
+                    <li><a href="#" id="Hard">Greu</a></li>
+                </ul>
+            </div>
+            <button class="Start" id="StartJoc" style="display: block;" onclick="StartJoc()">Start Joc</button>
         </div>
         <!-- Setarea numarului -->
         <div class="setNumber" id="setNumber" style="height: 400px;">
