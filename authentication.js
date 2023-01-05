@@ -23,7 +23,9 @@ $( "#btn1" ).click(function() {
         setDoc(doc(db, "Users", email),{
             username: username,
             password: password,
-            score: 0});
+            usor: 0,
+            mediu: 0,
+            greu: 0});
         // CreateUser -> Auth
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
         const user = userCredential.user;
@@ -33,6 +35,22 @@ $( "#btn1" ).click(function() {
             alert(error.message);
         });
 });
+
+
+const userConverter = {
+    toFirestore: (user) => {
+        return {
+            username: user.username,
+            usor: user.usor,
+            mediu: user.mediu,
+            greu: user.greu,
+            };
+    },
+    fromFirestore: (snapshot, options) => {
+        const data = snapshot.data(options);
+        return new User(data.username, data.usor, data.mediu, data.greu);
+    }
+};
 
 $( "#btn2" ).click(async function() {     
     var email = document.getElementById('email_login').value;
@@ -44,27 +62,13 @@ $( "#btn2" ).click(async function() {
             this.score = score;
         }
     }
-    
-    const userConverter = {
-        toFirestore: (user) => {
-            return {
-                username: user.username,
-                score: user.score,
-                password: user.password
-                };
-        },
-        fromFirestore: (snapshot, options) => {
-            const data = snapshot.data(options);
-            return new User(data.username, data.score, data.password);
-        }
-    };
     const ref = doc(db, "Users", email).withConverter(userConverter);
     const docSnap = await getDoc(ref);
     if (docSnap.exists()) {
         const user_data = docSnap.data();
-      } else {
+    } else {
         console.log("No such document!");
-      }
+    }
       
     const user_data = docSnap.data();
     
@@ -84,7 +88,7 @@ const loginForm = document.getElementById('Login');
 const registerForm = document.getElementById('Register');
 const switchToRegister = document.querySelector('#switch-to-register');
 const switchToLogin = document.querySelector('#switch-to-login');
-
+try{
 switchToRegister.addEventListener('click', (event) => {
     event.preventDefault();
     loginForm.style.display = 'none';
@@ -96,3 +100,9 @@ switchToLogin.addEventListener('click', (event) => {
     loginForm.style.display = 'block';
     registerForm.style.display = 'none';
 });
+}
+catch(err){
+    console.log(err);
+}
+
+export {db,collection,getDocs};

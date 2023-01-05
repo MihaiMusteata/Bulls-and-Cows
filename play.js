@@ -222,7 +222,7 @@ function Try(){
             // Robo check
             let dif = 1;
             if(Difficulty == "Easy")
-                dif = 0.1;
+                dif = 0.1   ;
             else if(Difficulty == "Medium")
                 dif = 0.3;
             console.log(Robo.possib.length)
@@ -264,8 +264,6 @@ function typeWriter(text, id) {
     const typeWriter = setInterval(() => {
     container.innerHTML += text.charAt(i);
       i++;
-    
-      // stop the loop when all the characters have been displayed
       if (i > text.length - 1) {
         clearInterval(typeWriter);
       }
@@ -273,7 +271,6 @@ function typeWriter(text, id) {
 }
 
 var over = false;
-/////////////////////////////// Zona NU ATINGE ///////////////////////////////
 function GameOver(){
     over = false;;
     if(GameMode == "RoboMode"){
@@ -309,12 +306,6 @@ function GameOver(){
 function BackHome(){
     window.location.href = 'home.html';
 }
-
-
-
-
-
-
 
 
 
