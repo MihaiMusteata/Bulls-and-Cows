@@ -836,21 +836,22 @@ li{
     list-style-type: none;
 }
 /* Leaderboard */
-.Leaderboard h2{
+.Leaderboard-Title{
     color:white;
     font-size: 50px;
     font-family: 'Merienda', sans-serif;
     position: fixed;
-    top: -100px;
+    display: block;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
-
 }
 .Leaderboard{
     left: 50%;
+    margin-top: 90px;
     transform: translateX(-50%);
     width: 1200px;
-    height: 780px;
+    height: 700px;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
     border:0.1rem solid white; 
