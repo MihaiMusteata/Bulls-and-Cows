@@ -1,4 +1,4 @@
-import {db,getDocs,collection} from './authentication.js';
+import {db,getDocs,collection} from './Firebase.js';
 async function getUsers() {
     let UserList = [];
     const querySnapshot = await getDocs(collection(db, "Users"));
