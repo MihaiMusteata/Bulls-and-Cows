@@ -884,26 +884,13 @@ li{
     table-layout: fixed;
     font-family: 'Merienda', sans-serif;
 }
-/* .Leaderboard-Table th{
-    bottom: 10px;
-    min-width: 100px;
-    display: inline;
-    border-bottom: 2px solid #03e9f4;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.Leaderboard th:nth-child(1){
-    padding-left: 50px;
-    padding-right: 50px;
-}
-.Leaderboard th:nth-child(2){
-    padding-left: 120px;
-    padding-right: 120px;
-}
-*/
 .Leaderboard-Table td:nth-child(2){
     width: 1000px;
 } 
 .Leaderboard-Table tr{
     padding-top: 100px;
+}
+.Level:hover{
+    color: #fff200;
+    cursor: pointer;
 }

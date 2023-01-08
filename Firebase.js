@@ -202,6 +202,7 @@ try{
             else if(Difficulty == "Medium")
                 dif = 0.3;
             console.log(Robo.possib.length)
+            // Parcurgerea tuturor posibilitatilor si eliminarea celor care nu se potrivesc
             for(let i = 0; i < dif*Robo.possib.length; i++){
                 if(!Robo.check(Robo.possib[i],Robo.guess)){
                     Robo.possib.splice(i,1);
