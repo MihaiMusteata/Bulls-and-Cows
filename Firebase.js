@@ -189,6 +189,7 @@ function GameOver(){
 
 try{
     document.getElementById('TryBtn').addEventListener('click', function(){
+    if(!over)
     if(checkInput(input)){
         if(GameMode == "RoboMode"){
             Player1.guess = input;
